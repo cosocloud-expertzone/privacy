@@ -9,10 +9,10 @@
     :root{
       --ink:#000;
       --muted:#5f6a7a;
-      --bg:#f3f3f3;                 /* page background like your screenshot */
+      --bg:#f3f3f3;
       --card:#fff;
       --border:#e6e6e6;
-      --brand:#13126A;              /* header bar color from screenshot */
+      --brand:#13126A;              /* header bar color */
       --radius:10px;
       --shadow:0 2px 12px rgba(0,0,0,.08);
       --maxw:980px;
@@ -21,7 +21,7 @@
       :root{ --ink:#e9e9f1; --muted:#b9b9c9; --bg:#0f0f14; --card:#17171d; --border:#26262c; --shadow:none }
     }
 
-    /* Base typography – 14px Segoe like the Terms page */
+    /* Base typography */
     html{font-size:14px}
     body{
       margin:0;
@@ -34,17 +34,24 @@
       text-rendering:optimizeLegibility;
     }
 
-    /* Clean top header bar */
+    /* Top header bar */
     .topbar{
       height:64px;
       background:var(--brand);
       box-shadow:0 1px 3px rgba(0,0,0,.25);
+      display:flex;
+      align-items:center;
+      padding:0 20px;
+    }
+    .topbar img{
+      height:32px;
+      width:auto;
     }
 
     /* Page frame */
     .wrap{max-width:var(--maxw);margin:28px auto;padding:0 24px}
     .page-title{
-      font-size:2rem;               /* big title outside the card */
+      font-size:2rem;
       line-height:1.25;
       font-weight:600;
       margin:8px 0 18px;
@@ -54,7 +61,7 @@
     .card{
       background:var(--card);
       border-radius:var(--radius);
-      border:1px solid var(--border); /* subtle border like screenshot */
+      border:1px solid var(--border);
       box-shadow:var(--shadow);
       padding:0;
       overflow:hidden;
@@ -62,10 +69,15 @@
 
     /* Hero area inside the card */
     .card-hero{
-      display:flex;justify-content:center;align-items:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       padding:56px 20px 24px;
     }
-    .illus{width:220px;height:auto}
+    .illus{
+      width:220px;
+      height:auto;
+    }
     @media (max-width:520px){ .illus{width:160px} }
 
     /* Body of the document */
@@ -82,36 +94,19 @@
   </style>
 </head>
 <body>
-  <!-- Clean top bar -->
-  <div class="topbar" role="banner"></div>
+  <!-- Top bar with EZ logo -->
+  <div class="topbar" role="banner">
+    <img src="ez-logo.svg" alt="ExpertZone Logo">
+  </div>
 
   <main class="wrap" role="main">
     <!-- Page title OUTSIDE the card -->
     <h1 class="page-title">Privacy Policy</h1>
 
     <article class="card" aria-labelledby="doc-title">
-      <!-- Hero illustration centered (optional; remove if you want pure text) -->
+      <!-- Hero illustration (your uploaded icon-image.svg) -->
       <div class="card-hero" aria-hidden="true">
-        <svg class="illus" viewBox="0 0 256 256">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#b8a7ff"/>
-              <stop offset="1" stop-color="#8a7aff"/>
-            </linearGradient>
-          </defs>
-          <g fill="url(#g1)" opacity=".22">
-            <circle cx="60" cy="168" r="24"/>
-            <circle cx="200" cy="108" r="20"/>
-            <circle cx="170" cy="204" r="10"/>
-          </g>
-          <rect x="92" y="44" width="112" height="148" rx="10" fill="url(#g1)" opacity=".95"/>
-          <rect x="104" y="60" width="88" height="120" rx="6" fill="#fff"/>
-          <rect x="116" y="82" width="64" height="10" rx="5" fill="#e6e3ff"/>
-          <rect x="116" y="104" width="64" height="10" rx="5" fill="#e6e3ff"/>
-          <rect x="116" y="126" width="48" height="10" rx="5" fill="#e6e3ff"/>
-          <path d="M68 76c16 8 32 8 48 0 0 26-8 44-24 54-16-10-24-28-24-54z" fill="url(#g1)"/>
-          <path d="M92 92v16m-8-8h16" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-        </svg>
+        <img src="icon-image.svg" alt="Privacy illustration" class="illus">
       </div>
 
       <!-- Document body -->
